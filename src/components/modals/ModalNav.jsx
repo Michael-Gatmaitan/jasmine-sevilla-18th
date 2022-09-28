@@ -1,3 +1,4 @@
+import './ModalNav.css';
 
 const ModalNav = (props) => {
 
@@ -5,8 +6,8 @@ const ModalNav = (props) => {
     setShowMessage
   } = props;
 
-  const logo = "./svg/icons/jm_black.svg";
-  const back = "./svg/icons/back_black.svg";
+  const logo = "./svg/icons/jm_white.svg";
+  const back = "./svg/icons/back_white.svg";
 
   return (
     <nav className="modal-nav">

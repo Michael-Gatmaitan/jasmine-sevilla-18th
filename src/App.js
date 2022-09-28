@@ -1,5 +1,5 @@
 // Module imports
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Route,
   Routes,
@@ -8,6 +8,7 @@ import {
 import { AnimatePresence } from 'framer-motion';
 
 // UI imports
+import SideBar from './components/SideBar';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Eighteenth from './components/Eighteenth';
@@ -18,10 +19,17 @@ import './mixins.css';
 const App = () => {
   const location = useLocation();
 
+  const [showSideBar, setShowSideBar] = useState(true);
+  
   return (
     <React.Fragment>
 
-      <Nav />
+      <SideBar
+        showSideBar={ showSideBar }
+        setShowSideBar={ setShowSideBar }
+      />
+
+      <Nav setShowSideBar={ setShowSideBar } />
 
 
       <AnimatePresence>

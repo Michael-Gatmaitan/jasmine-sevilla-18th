@@ -27,7 +27,7 @@
   color: rgba(18, 18, 18, 0.8);
 }
 
-nav {
+.main-nav {
   width: calc(100% + 28px);
   margin-left: -14px;
   padding: 15px 0;
@@ -45,11 +45,11 @@ nav {
   z-index: 50;
 }
 
-nav img {
+.main-nav img {
   display: block;
 }
 
-nav .burger-menu {
+.main-nav .burger-menu {
   height: 30px;
   padding: 14px;
   display: -webkit-box;
@@ -61,7 +61,7 @@ nav .burger-menu {
           justify-content: center;
 }
 
-nav .logo {
+.main-nav .logo {
   height: 30px;
   position: absolute;
   left: 50%;
@@ -69,7 +69,7 @@ nav .logo {
           transform: translateX(-50%);
 }
 
-nav .buttons {
+.main-nav .buttons {
   display: none;
 }
 /*# sourceMappingURL=Nav.css.map */

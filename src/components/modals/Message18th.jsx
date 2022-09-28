@@ -14,18 +14,22 @@ const Message18th = (props) => {
   const variant = {
     initial: {
       opacity: 0,
-      ponterEvents: "none"
+      y: '-10vh',
+      ponterEvents: "none",
     },
 
     animate: {
       opacity: 1,
+      y: 0,
       pointerEvents: "auto",
-      transition: { duration: .5 }
+      transition: { duration: .2 }
     },
 
     exit: {
+      y: '-10vh',
       opacity: 0,
-      pointerEvents: "none"
+      pointerEvents: "none",
+      transition: { duration: .2 }
     }
   }
 
@@ -40,7 +44,7 @@ const Message18th = (props) => {
         >
 
           <ModalNav setShowMessage={setShowMessage} />
-
+          
           <div className="message-container">
             <div className="message-header h-1">{messageData.title}</div>
             <div className="message-body body-text">{messageData.message}</div>

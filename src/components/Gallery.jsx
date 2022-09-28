@@ -8,6 +8,9 @@ import { pageAnimationVariant } from '../pageAnimationVariant';
 import './scss/Gallery.css';
 
 const Gallery = () => {
+
+  // const { explore } = data;
+
   return (
     <motion.div className="gallery container"
       variants={pageAnimationVariant}

@@ -1,14 +1,14 @@
 import './scss/Nav.css';
 
-const Nav = () => {
+const Nav = ({setShowSideBar})=> {
 
   const logo = "./svg/icons/jm_black.svg";
   const burger = "./svg/icons/burger.svg";
 
   return (
-    <nav>
+    <nav className="main-nav">
 
-      <div className="burger-menu">
+      <div className="burger-menu" onClick={ () => setShowSideBar(true) }>
         <img src={burger} alt="burger-menu" />
       </div>
 

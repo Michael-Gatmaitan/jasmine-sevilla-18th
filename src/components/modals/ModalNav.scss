@@ -1,15 +1,15 @@
 @import '../../mixins.scss';
 
 .modal-nav {
-  width: calc(100% + 28px);
+  width: 100vw;
   margin-left: -14px;
-  padding: 15px 0;
+  padding: 15px 14px;
   display: flex;
   align-items: center;
   margin-bottom: 48px;
   position: sticky;
   top: 0;
-  background-color: $body_bg;
+  background-color: #121212;
   z-index: 50;
 
   img {
@@ -18,9 +18,9 @@
 
   .back {
     // width: calc(28px + (14px * 2));
+    height: 30px;
     width: 35px;
     padding: 0 14px;
-    background-color: #f00;
     @include flexCenter;
   }
 

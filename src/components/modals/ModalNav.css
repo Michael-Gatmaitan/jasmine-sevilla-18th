@@ -28,9 +28,9 @@
 }
 
 .modal-nav {
-  width: calc(100% + 28px);
+  width: 100vw;
   margin-left: -14px;
-  padding: 15px 0;
+  padding: 15px 14px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,7 +41,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: #F8FFFE;
+  background-color: #121212;
   z-index: 50;
 }
 
@@ -50,9 +50,9 @@
 }
 
 .modal-nav .back {
+  height: 30px;
   width: 35px;
   padding: 0 14px;
-  background-color: #f00;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -1,0 +1,105 @@
+@import '../../mixins.scss';
+
+.sidebar {
+  width: 100vw;
+  height: 100vh;
+  background-color: $body_bg;
+  padding: 0 14px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+
+  img {
+    display: block;
+  }
+
+  .line {
+    position: absolute;
+    top: 50px;
+    width: 60px;
+    height: 5px;
+    background-color: #f00;
+    transform: translateX(-50%);
+    left: 50%;
+  }
+
+  .sidebar-nav {
+    width: 100vw;
+    margin-left: -14px;
+    padding: 15px 14px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 48px;
+
+    .close {
+      width: 30px;
+      height: 30px;
+      @include flexCenter;
+    }
+    
+    .logo {
+      position: absolute;
+      left: 50%;
+      height: 30px;
+      transform: translateX(-50%);
+    }
+  }
+
+  .sidebar-buttons {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 12px;
+    margin-bottom: 32px;
+
+    .sidebar-button {
+      padding: 6px 0;
+      // transition: 0.1s ease-in;
+      border-radius: 4px;
+      background-color: $body_bg;
+
+      &:hover {
+        color: $green;
+      }
+    }
+
+    .active-button {
+      color: $d_blue;
+    }
+  }
+
+  .profile-container {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $blue;
+    border-radius: 12px;
+
+    .profile-border {
+      @include flexCenter;
+      width: 120px;
+      height: 120px;
+      background-color: #fff;
+      border-radius: 50%;
+
+      .profile {
+        width: 110px;
+        height: 110px;
+        overflow: hidden;
+        border-radius: 50%;
+
+        img { width: 110px; height: 110px; }
+      }
+    }
+
+    .profile-info {
+      margin-top: 12px;
+      text-align: center;
+
+      .profile-label { @include fontProp('Montserrat', 700, 14px, #fff); }
+      .profile-name { @include fontProp('Montserrat', 700, 24px, #fff); }
+    }
+  }
+}

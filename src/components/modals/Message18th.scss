@@ -4,16 +4,25 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  padding: 0 14px;
+  padding: 0 14px 48px 14px;
   top: 0;
   left: 0;
-  background-color: $body_bg;
+  // background-color: $body_bg;
+  background-color: #121212;
   z-index: 100;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   .message-container {
     margin-top: 48px;
+    // width: 90%;
+
+    .message-header {
+      color: #fff;
+    }
 
     .message-body {
+      color: rgba(#fff, 0.8);
       margin-top: 12px;
     }
   }
