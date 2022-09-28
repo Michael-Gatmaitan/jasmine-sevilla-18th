@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Source+Sans+Pro:wght@400;600&display=swap");
+.h-1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  color: #121212;
+}
+
+.h-2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #121212;
+}
+
+.btn-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #121212;
+}
+
+.body-text {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(18, 18, 18, 0.8);
+}
+
+.welcome-section {
+  text-align: center;
+}
+
+.welcome-section .welcome-text {
+  width: 80%;
+  margin-top: 12px;
+}
+
+.welcome-section .welcome-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.welcome-section .welcome-images .image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #121212;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.welcome-section .welcome-images .image-container img {
+  width: 100%;
+}
+
+.card-of-pages {
+  margin-top: 140px;
+}
+
+.card-of-pages .page-card {
+  width: 100%;
+  padding: 70px 0;
+  position: relative;
+}
+
+.card-of-pages .page-card .page-card-bg {
+  width: calc(100% + 28px);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -14px;
+  z-index: -1;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: skewY(-6deg);
+          transform: skewY(-6deg);
+}
+
+.card-of-pages .page-card .page-card-info {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.card-of-pages .page-card .page-card-info .page-card-head {
+  color: #fff;
+}
+
+.card-of-pages .page-card .page-card-info .page-card-text {
+  color: rgba(255, 255, 255, 0.8);
+  width: 70%;
+  margin-top: 12px;
+}
+
+.card-of-pages .page-card .page-card-info .page-card-button {
+  text-decoration: none;
+  padding: 12px 12px;
+  background-color: #93EFB8;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #121212;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+
+.card-of-pages .page-card-image {
+  margin-left: calc(100% - 200px);
+}
+
+.card-of-pages .page-card-image img {
+  width: 200px;
+}
+/*# sourceMappingURL=Home.css.map */

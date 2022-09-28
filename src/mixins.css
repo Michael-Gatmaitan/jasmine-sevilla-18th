@@ -26,25 +26,4 @@
   font-size: 16px;
   color: rgba(18, 18, 18, 0.8);
 }
-
-body {
-  margin: 0 14px;
-  padding: 0;
-  background-color: #F8FFFE;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  outline: none;
-}
-
-button, input, a {
-  border: none;
-  outline: none;
-}
-
-a, button {
-  cursor: pointer;
-}
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=mixins.css.map */

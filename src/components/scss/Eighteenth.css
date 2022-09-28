@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Source+Sans+Pro:wght@400;600&display=swap");
+.h-1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  color: #121212;
+}
+
+.h-2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #121212;
+}
+
+.btn-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #121212;
+}
+
+.body-text {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(18, 18, 18, 0.8);
+}
+
+.message-card-container {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+}
+
+.message-card-container .message-card {
+  width: calc(100% + 28px);
+  margin-left: -14px;
+  padding: 30px;
+  background-color: #1D2FD3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: skewY(-6deg);
+          transform: skewY(-6deg);
+}
+
+.message-card-container .message-card .message-head {
+  width: 90%;
+  text-align: center;
+}
+
+.message-card-container .message-card .message-button {
+  padding: 14px 28px;
+  border-radius: 4px;
+  margin-top: 16px;
+}
+
+.message-card-container .blue {
+  background-color: #5666F5;
+}
+
+.message-card-container .blue .message-head {
+  color: #121212;
+  text-shadow: -4px 4px 0 #93EFB8;
+}
+
+.message-card-container .blue .message-button {
+  background-color: #121212;
+  -webkit-box-shadow: -4px 4px 0 #93EFB8;
+          box-shadow: -4px 4px 0 #93EFB8;
+  color: #fff;
+}
+
+.message-card-container .white {
+  background-color: #F8FFFE;
+}
+
+.message-card-container .white .message-head {
+  color: #93EFB8;
+  text-shadow: -4px 4px 0 #5666F5;
+}
+
+.message-card-container .white .message-button {
+  background-color: #93EFB8;
+  -webkit-box-shadow: -4px 4px 0 #5666F5;
+          box-shadow: -4px 4px 0 #5666F5;
+  color: #121212;
+}
+
+.message-card-container .black {
+  background-color: #121212;
+}
+
+.message-card-container .black .message-head {
+  color: #5666F5;
+  text-shadow: -4px 4px 0 #93EFB8;
+}
+
+.message-card-container .black .message-button {
+  background-color: #5666F5;
+  -webkit-box-shadow: -4px 4px 0 #93EFB8;
+          box-shadow: -4px 4px 0 #93EFB8;
+  color: #fff;
+}
+/*# sourceMappingURL=Eighteenth.css.map */

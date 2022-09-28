@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+// Module imports
+import React from 'react';
+import {
+  Route,
+  Routes,
+  useLocation
+} from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
-function App() {
+// UI imports
+import Nav from './components/Nav';
+import Home from './components/Home';
+import Eighteenth from './components/Eighteenth';
+import Gallery from './components/Gallery';
+
+import './mixins.css';
+
+const App = () => {
+  const location = useLocation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+
+      <Nav />
+
+
+      <AnimatePresence>
+        <Routes location={location} key={location.key}>
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/18th" element={<Eighteenth />} />
+          <Route exact path="/" element={<Home />} />
+        </Routes>
+      </AnimatePresence>
+    </React.Fragment>
   );
 }
 

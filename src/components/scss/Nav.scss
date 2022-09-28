@@ -1,0 +1,37 @@
+@import '../../mixins.scss';
+
+nav {
+  width: calc(100% + 28px);
+  margin-left: -14px;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 48px;
+  position: sticky;
+  top: 0;
+  background-color: $body_bg;
+  z-index: 50;
+
+  img {
+    display: block;
+  }
+
+  .burger-menu {
+    // width: calc(28px + (14px * 2));
+    height: 30px;
+    padding: 14px;
+    @include flexCenter;
+  }
+
+  .logo {
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  // Desktop only
+  .buttons {
+    display: none;
+  }
+}

@@ -1,0 +1,20 @@
+@import '../../mixins.scss';
+
+.message-18th {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  padding: 0 14px;
+  top: 0;
+  left: 0;
+  background-color: $body_bg;
+  z-index: 100;
+
+  .message-container {
+    margin-top: 48px;
+
+    .message-body {
+      margin-top: 12px;
+    }
+  }
+}

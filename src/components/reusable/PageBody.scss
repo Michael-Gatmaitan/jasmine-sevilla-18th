@@ -1,0 +1,18 @@
+@import '../../mixins.scss';
+
+.page-body {
+  margin-bottom: 45px;
+
+  .page-header {
+    color: $blue;
+    text-shadow: -4px 4px 0 $green;
+  }
+
+  .page-image {
+    margin-top: 60px;
+    
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import '../../mixins.scss';
+
+.message-card-container {
+  display: grid;
+  grid-auto-rows: auto;
+
+  .message-card {
+    width: calc(100% + 28px);
+    margin-left: -14px;
+    padding: 30px;
+    background-color: $d_blue;
+    @include flexCenter;
+    flex-direction: column;
+    transform-origin: center center;
+    transform: skewY(-6deg);
+
+    .message-head {
+      width: 90%;
+      text-align: center;
+    }
+
+    .message-button {
+      padding: 14px 28px;
+      border-radius: 4px;
+      margin-top: 16px;
+    }
+  }
+
+  .blue {
+    background-color: $blue;
+
+    .message-head {
+      color: $black;
+      text-shadow: -4px 4px 0 $green;
+    }
+
+    .message-button {
+      background-color: $black;
+      box-shadow: -4px 4px 0 $green;
+      color: #fff;
+    }
+  }
+
+  .white {
+    background-color: $body_bg;
+
+    .message-head {
+      color: $green;
+      text-shadow: -4px 4px 0 $blue;
+    }
+
+    .message-button {
+      background-color: $green;
+      box-shadow: -4px 4px 0 $blue;
+      color: $black;
+    }
+  }
+
+  .black {
+    background-color: $black;
+
+    .message-head {
+      color: $blue;
+      text-shadow: -4px 4px 0 $green;
+    }
+
+    .message-button {
+      background-color: $blue;
+      box-shadow: -4px 4px 0 $green;
+      color: #fff;
+    }
+  }
+}

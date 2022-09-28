@@ -1,0 +1,83 @@
+@import '../../mixins.scss';
+
+.welcome-section {
+  text-align: center;
+
+  // .welcome-head {}
+
+  .welcome-text {
+    width: 80%;
+    margin-top: 12px;
+  }
+
+  .welcome-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+
+    .image-container {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: $black;
+      @include flexCenter;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.card-of-pages {
+  margin-top: 140px;
+  .page-card {
+    width: 100%;
+    padding: 70px 0;
+    position: relative;
+
+    .page-card-bg {
+      width: calc(100% + 28px);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -14px;
+      z-index: -1;
+      transform-origin: center center;
+      transform: skewY(-6deg);
+    }
+
+    .page-card-info {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      .page-card-head {
+        color: #fff;
+      }
+      .page-card-text {
+        color: rgba(#fff, 0.8);
+        width: 70%;
+        margin-top: 12px;
+      }
+
+      .page-card-button {
+        text-decoration: none;
+        padding: 12px 12px;
+        background-color: $green;
+        @include fontProp('Montserrat', 500, 14px, $black);
+        margin-top: 8px;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .page-card-image {
+    margin-left: calc(100% - 200px);
+    img {
+      width: 200px;
+    }
+  }
+}
