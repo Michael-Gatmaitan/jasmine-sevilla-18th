@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Source+Sans+Pro:wght@400;600&display=swap");
+.h-1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  color: #121212;
+}
+
+.h-2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #121212;
+}
+
+.btn-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #121212;
+}
+
+.body-text {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(18, 18, 18, 0.8);
+}
+
+.folder-gallery {
+  width: 100%;
+  height: 100vh;
+  background-color: #F8FFFE;
+  padding: 0 14px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  overflow-y: scroll;
+}
+
+.folder-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.folder-gallery img {
+  display: block;
+}
+
+.folder-gallery .folder-gallery-nav {
+  width: 100%;
+  padding: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  margin-bottom: 48px;
+  background-color: #F8FFFE;
+}
+
+.folder-gallery .folder-gallery-nav .close {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.folder-gallery .folder-gallery-nav .logo {
+  position: absolute;
+  left: 50%;
+  height: 30px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.folder-gallery .folder-gallery-nav .download-folder {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.folder-gallery .gallery-container {
+  height: 2000px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#000));
+  background: linear-gradient(#fff, #000);
+}
+
+.folder-gallery .gallery-container .folder-label {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(18, 18, 18, 0.6);
+}
+
+.folder-gallery .gallery-container .h-1 {
+  width: 80%;
+}
+
+.folder-gallery .gallery-container .selection {
+  padding-top: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
+}
+
+.folder-gallery .gallery-container .selection .selection-button {
+  padding: 8px 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  background-color: #1D2FD3;
+  border-radius: 4px;
+}
+/*# sourceMappingURL=FolderGallery.css.map */

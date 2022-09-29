@@ -1,1 +1,86 @@
-/* No CSS *//*# sourceMappingURL=Gallery.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Source+Sans+Pro:wght@400;600&display=swap");
+.h-1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  color: #121212;
+}
+
+.h-2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #121212;
+}
+
+.btn-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #121212;
+}
+
+.body-text {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(18, 18, 18, 0.8);
+}
+
+.folder-grid {
+  display: -ms-grid;
+  display: grid;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.folder-grid .folder-section {
+  width: 100%;
+}
+
+.folder-grid .folder-section .folder-block {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.folder-grid .folder-section .folder-block .folder-container {
+  height: 150px;
+  background-color: #5666F5;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.folder-grid .folder-section .folder-block .folder-container .folder-info {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.folder-grid .folder-section .folder-block .folder-container .folder-info .folder-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.folder-grid .folder-section .folder-block .folder-container .folder-info .folder-label {
+  color: #fff;
+}
+/*# sourceMappingURL=Gallery.css.map */

@@ -109,10 +109,12 @@ const SideBar = props => {
               else if (pathname.includes('/about')) activeButton = "About";
               else activeButton = "Home";
 
+              const isButtonActive = activeButton === label;
+
               return (
                 <Link to={`${path}`} key={id}>
                   <motion.button
-                    className={`sidebar-button h-1${activeButton === label ? " active-button" : ""}`}
+                    className={`sidebar-button h-1${isButtonActive ? " active-button" : ""}`}
                     onClick={ () => setShowSideBar(false) }
                     variants={item}
                   >
@@ -138,9 +140,6 @@ const SideBar = props => {
 
         </motion.div>
       )}
-
-
-
     </AnimatePresence>
   )
 }

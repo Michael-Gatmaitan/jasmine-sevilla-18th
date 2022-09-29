@@ -13,13 +13,14 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import Eighteenth from './components/Eighteenth';
 import Gallery from './components/Gallery';
+import QuoteFooter from './components/QuoteFooter';
 
 import './mixins.css';
 
 const App = () => {
   const location = useLocation();
 
-  const [showSideBar, setShowSideBar] = useState(true);
+  const [showSideBar, setShowSideBar] = useState(false);
   
   return (
     <React.Fragment>
@@ -39,6 +40,8 @@ const App = () => {
           <Route exact path="/" element={<Home />} />
         </Routes>
       </AnimatePresence>
+
+      <QuoteFooter />
     </React.Fragment>
   );
 }

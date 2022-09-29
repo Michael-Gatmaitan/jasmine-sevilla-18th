@@ -1,0 +1,49 @@
+@import '../../mixins.scss';
+
+.folder-grid {
+  display: grid;
+  gap: 32px;
+  margin-bottom: 32px;
+
+  .folder-section {
+    width: 100%;
+
+    .folder-block {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 10px;
+      margin-top: 12px;
+  
+      .folder-container {
+        height: 150px;
+        background-color: $blue;
+        border-radius: 12px;
+        position: relative;
+        cursor: pointer;
+  
+        .folder-info {
+          width: 90%;
+          display: flex;
+          text-align: center;
+          align-items: center;
+          flex-direction: column;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+  
+          .folder-icon {
+            width: 32px;
+            height: 32px;
+          }
+  
+          .folder-label {
+            color: #fff;
+          }
+        }
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,71 @@
+@import '../../mixins.scss';
+
+.quote-footer {
+  margin-top: 120px;
+
+  .myname-label {
+    @include fontProp('Montserrat', 700, 14px, $d_blue);
+    margin-bottom: 8px;
+  }
+  
+  .quote-container {
+    width: calc(100% + 28px);
+    margin-left: -14px;
+    padding: 24px 14px;
+    background-color: $blue;
+  
+    .quote {
+      @include fontProp('Source Sans Pro', 400, 16px, #fff);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

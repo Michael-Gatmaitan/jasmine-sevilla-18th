@@ -27,30 +27,29 @@
   color: rgba(18, 18, 18, 0.8);
 }
 
-.message-18th {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  padding: 0 14px 48px 14px;
-  top: 0;
-  left: 0;
-  background-color: #121212;
-  z-index: 100;
-  overflow-y: scroll;
-  overflow-x: hidden;
+.quote-footer {
+  margin-top: 120px;
 }
 
-.message-18th .message-container {
-  margin-top: 1048px;
-  width: 90%;
+.quote-footer .myname-label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #1D2FD3;
+  margin-bottom: 8px;
 }
 
-.message-18th .message-container .message-header {
+.quote-footer .quote-container {
+  width: calc(100% + 28px);
+  margin-left: -14px;
+  padding: 24px 14px;
+  background-color: #5666F5;
+}
+
+.quote-footer .quote-container .quote {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   color: #fff;
 }
-
-.message-18th .message-container .message-body {
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: 12px;
-}
-/*# sourceMappingURL=Message18th.css.map */
+/*# sourceMappingURL=QuoteFooter.css.map */
