@@ -23,8 +23,21 @@ const Gallery = () => {
     }
   ];
 
-  const [showFolderGallery, setShowFolderGallery] = useState(true);
-  const [galleryData, setGalleryData] = useState(special_memories[4]);
+  const [showFolderGallery, setShowFolderGallery] = useState(false);
+
+  // Boilerplate only
+  const [galleryData, setGalleryData] = useState({
+    "folderTitle": "",
+    "paths": {
+      "pictures": "",
+      "videos": "",
+    },
+
+    "files": {
+      "pictures": [],
+      "videos": [],
+    }
+  });
 
   return (
     <React.Fragment>
@@ -57,7 +70,9 @@ const Gallery = () => {
 
         <div className="gallery-message">
           <div className="h-1">Message</div>
-          <div className="body-text"></div>
+          <div className="body-text">Cherish every moment na binigay satin ni God and this memories will not be erased to us forever if we buried it inside our heart. Thank you for being a good love provider to me, for being nice to me, for being a listener of my problems, for making memories with me that I will appreciate forever in my entire life. Don’t hesitate to reach me if you need one to talk with about your problems even if we sometine don’t understand each other’s side.
+
+Thank you for everything you’ve done with me and for staying with me kahit na minsan di tayo nagkakaintindihan. Di a dito natatapos ang lahat hon! Madami pa tayong dadaanan at pagdadaanan na magiging memories natin na titignan natin as a lesson soon! I love you.</div>
         </div>
       </motion.div>
     </React.Fragment>

@@ -10,22 +10,24 @@ const SideBar = props => {
   } = props;
 
   const buttons = [{
-    label: "Home",
-    path: "/",
-    id: 1
-  }, {
-    label: "18th",
-    path: "/18th",
-    id: 2
-  }, {
-    label: "Gallery",
-    path: "/gallery",
-    id: 3
-  }, {
-    label: "About",
-    path: "/about",
-    id: 4
-  }];
+      label: "Home",
+      path: "/",
+      id: 1
+    }, {
+      label: "18th",
+      path: "/18th",
+      id: 2
+    }, {
+      label: "Gallery",
+      path: "/gallery",
+      id: 3
+    },
+    // {
+    //   label: "About",
+    //   path: "/about",
+    //   id: 4
+    // }
+  ];
   
   const { pathname } = useLocation();
 

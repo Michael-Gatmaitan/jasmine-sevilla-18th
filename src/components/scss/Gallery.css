@@ -83,4 +83,9 @@
 .folder-grid .folder-section .folder-block .folder-container .folder-info .folder-label {
   color: #fff;
 }
+
+.body-text {
+  margin-top: 8px;
+  width: 80%;
+}
 /*# sourceMappingURL=Gallery.css.map */

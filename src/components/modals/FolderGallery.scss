@@ -51,8 +51,6 @@
   }
 
   .gallery-container {
-    height: 2000px;
-    background: linear-gradient(#fff, #000);
 
     .folder-label {
       @include fontProp('Source Sans Pro', 400, 12px, rgba(#121212, 0.6));
@@ -61,17 +59,47 @@
     .h-1 { width: 80%; }
 
     .selection {
-      padding-top: 12px;
+      padding: 12px 0;
       display: flex;
       gap: 12px;
       position: sticky;
       top: 60px;
+      background-color: $body_bg;
 
       .selection-button {
         padding: 8px 12px;
-        @include fontProp('Montserrat', 500, 14px, #fff);
-        background-color: $d_blue;
+        @include fontProp('Montserrat', 500, 14px, #121212);
+        background-color: $green;
         border-radius: 4px;
+      }
+
+      .active-selection {
+        color: #fff;
+        background-color: $d_blue;
+      }
+    }
+
+    .gallery-data {
+      width: 100%;
+
+      .h-2 { margin-top: 10px; }
+
+      .pictures-grids {
+        width: 100%;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+
+        .picture-grid {
+          
+          .picture-container {
+            margin-top: 10px;
+            img {
+              width: 100%;
+              border-radius: 8px;
+            }
+          }
+        }
       }
     }
   }

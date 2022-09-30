@@ -42,17 +42,6 @@
   display: block;
 }
 
-.sidebar .line {
-  position: absolute;
-  top: 50px;
-  width: 60px;
-  height: 5px;
-  background-color: #f00;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  left: 50%;
-}
-
 .sidebar .sidebar-nav {
   width: 100%;
   padding: 15px 0;

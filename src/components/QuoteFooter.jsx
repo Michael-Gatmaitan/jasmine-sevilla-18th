@@ -14,6 +14,7 @@ const QuoteFooter = () => {
   const shuffleQuote = () => {
     let randomNumber = Math.floor(Math.random() * (quotes.length - 0 + 1) + 0);
     setQuote(quotes[randomNumber]);
+    document.body.scrollIntoView(true);
   }
 
   return (

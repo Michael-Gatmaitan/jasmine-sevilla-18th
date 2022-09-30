@@ -98,12 +98,6 @@
           justify-content: center;
 }
 
-.folder-gallery .gallery-container {
-  height: 2000px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#000));
-  background: linear-gradient(#fff, #000);
-}
-
 .folder-gallery .gallery-container .folder-label {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
@@ -116,7 +110,7 @@
 }
 
 .folder-gallery .gallery-container .selection {
-  padding-top: 12px;
+  padding: 12px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,6 +118,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 60px;
+  background-color: #F8FFFE;
 }
 
 .folder-gallery .gallery-container .selection .selection-button {
@@ -131,8 +126,39 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 14px;
+  color: #121212;
+  background-color: #93EFB8;
+  border-radius: 4px;
+}
+
+.folder-gallery .gallery-container .selection .active-selection {
   color: #fff;
   background-color: #1D2FD3;
-  border-radius: 4px;
+}
+
+.folder-gallery .gallery-container .gallery-data {
+  width: 100%;
+}
+
+.folder-gallery .gallery-container .gallery-data .h-2 {
+  margin-top: 10px;
+}
+
+.folder-gallery .gallery-container .gallery-data .pictures-grids {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.folder-gallery .gallery-container .gallery-data .pictures-grids .picture-grid .picture-container {
+  margin-top: 10px;
+}
+
+.folder-gallery .gallery-container .gallery-data .pictures-grids .picture-grid .picture-container img {
+  width: 100%;
+  border-radius: 8px;
 }
 /*# sourceMappingURL=FolderGallery.css.map */
