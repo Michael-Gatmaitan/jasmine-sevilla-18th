@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import './FolderGallery.css';
@@ -113,7 +114,10 @@ const FolderGallery = props => {
                         <div className="picture-grid" key={i}>
                           {imageColumn.map((image, j) =>(
                             <div className="picture-container" key={j}>
-                              <img src={`${galleryData.paths.pictures}${image}`} alt="gallery-column" />
+                              <LazyLoadImage
+                                src={`${galleryData.paths.pictures}${image}`}
+                                alt="gallery-column"
+                              />
                             </div>
                           ))}
                         </div>
