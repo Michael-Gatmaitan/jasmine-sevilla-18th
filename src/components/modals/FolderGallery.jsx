@@ -1,8 +1,11 @@
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import './FolderGallery.css';
+
+// npm module for generating video thumbnail
+import VideoThumbnail from 'react-video-thumbnail';
 
 const FolderGallery = props => {
 
@@ -18,6 +21,7 @@ const FolderGallery = props => {
   } = galleryData.files;
 
   const [imagesByColumn, setImagesByColumn] = useState([]);
+  const [videosByColumn, setVideosByColumn] = useState([]);
 
   useEffect(() => {
 
@@ -26,16 +30,26 @@ const FolderGallery = props => {
       let imagesByColumn = [...Array(cols).keys()].map(c => pictures.filter((_, i) => i % cols === c));
       setImagesByColumn(imagesByColumn);
     }
-  }, [galleryData, pictures]);
+
+    if (videos) {
+      const cols = 3;
+      let videosByColumn = [...Array(cols).keys()].map(c => videos.filter((_, i) => i % cols === c));
+      setVideosByColumn(videosByColumn);
+    }
+
+    console.log("Render gallery data");
+  }, [galleryData, pictures, videos]);
 
   const picturesIsNotEmpty = pictures.length !== 0;
   const videosIsNotEmpty = videos.length !== 0;
 
-  const picturesContainer = useRef(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
-  const scrollToTop_pictures = () => {
-    picturesContainer.current.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-  }
+  const [activeSubFolder, setActiveSubFolder] = useState(
+    (videos.length <= 0 && pictures.length >= 1) ? 'Pictures' :
+    (pictures.length <= 0 && videos.length >= 1) ? 'Videos' :
+    'Pictures'
+  );
 
   const variant = {
     initial: {
@@ -59,12 +73,6 @@ const FolderGallery = props => {
     }
   }
 
-  //======== =   _= =======   =====   |   =======  ====
-  //=        = =       =     =        |      =     =   =
-  //====     ==        =      ====_   |      =     ===
-  //=        = =       =          =   |   =  =     =  =
-  //======== =  =__ =======  =====    |    ==      =   =
-
   return (
     <AnimatePresence>
       {showFolderGallery && (
@@ -76,7 +84,10 @@ const FolderGallery = props => {
         >
 
           <div className="folder-gallery-nav">
-            <div className="close" onClick={ () => setShowFolderGallery(false) }>
+            <div className="close" onClick={ () => {
+              setShowFolderGallery(false);
+              setIsVideoLoaded(false);
+            }}>
               <img src="./svg/icons/close_black.svg" alt="close" />
             </div>
 
@@ -100,31 +111,59 @@ const FolderGallery = props => {
 
               <div className="selection">
 
-              {picturesIsNotEmpty && <button className="selection-button" onClick={() => scrollToTop_pictures() }>Pictures</button>}
-              {videosIsNotEmpty && <button className="selection-button">Videos</button>}
+              {picturesIsNotEmpty &&
+                <button className={`selection-button ${activeSubFolder === "Pictures" ? 'active-selection' : ""}`} onClick={() => setActiveSubFolder("Pictures") }>Pictures</button>
+              }
+              {videosIsNotEmpty &&
+                <button className={`selection-button ${activeSubFolder === "Videos" ? 'active-selection' : ""}`} onClick={() => setActiveSubFolder("Videos") }>Videos</button>
+              }
 
               </div>
 
               <div className="gallery-data">
-                {picturesIsNotEmpty && (
-                  <>
-                    <div className="h-2" ref={picturesContainer}>Pictures</div>
-                    <div className="pictures-grids">
-                      {imagesByColumn.map((imageColumn, i) => (
-                        <div className="picture-grid" key={i}>
-                          {imageColumn.map((image, j) =>(
-                            <div className="picture-container" key={j}>
-                              <LazyLoadImage
-                                src={`${galleryData.paths.pictures}${image}`}
-                                alt="gallery-column"
+                {picturesIsNotEmpty && (<>
+                  <div className="h-2" style={{ display: activeSubFolder === "Pictures" ? "block" : "none" }}>Pictures</div>
+                  <div className="data-grids" style={{ display: activeSubFolder === "Pictures" ? "grid" : "none" }}>
+                    {imagesByColumn.map((imageColumn, i) => (
+                      <div className="data-grid" key={i}>
+                        {imageColumn.map((image, j) =>(
+                          <div className="data-container" key={j}>
+                            <LazyLoadImage
+                              src={`${galleryData.paths.pictures}${image}`}
+                              alt={image}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </>)}
+
+                {videosIsNotEmpty && (<>
+                  <div className="h-2" style={{ display: activeSubFolder === "Videos" ? "block" : "none" }}>Videos</div>
+                  <div className="data-grids" style={{ display: activeSubFolder === "Videos" ? "grid" : "none" }}>
+                    {videosByColumn.map((videoColumn, i) => (
+                      <div className="data-grid" key={i}>
+                        {videoColumn.map((video, j) => (
+                          <div className="data-container" key={j}>
+                            <div className="video-thumbnail"
+                              style={{
+                                display: isVideoLoaded ? "block" : "none"
+                              }}
+                            >
+                              <div className="thumbnail-darker" />
+                              <VideoThumbnail
+                                videoUrl={`${galleryData.paths.videos}${video}`}
+                                thumbnailHandler={ () => setIsVideoLoaded(true) }
+                                onSeeked={() => console.log("Seeked")}
                               />
                             </div>
-                          ))}
-                        </div>
-                      ))}
-                    </div>
-                  </>
-                )}
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </>)}
               </div>
             </div>
           )}

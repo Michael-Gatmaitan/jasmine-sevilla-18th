@@ -37,6 +37,7 @@
   top: 0;
   z-index: 100;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .folder-gallery::-webkit-scrollbar {
@@ -64,6 +65,7 @@
   top: 0;
   margin-bottom: 48px;
   background-color: #F8FFFE;
+  z-index: 10;
 }
 
 .folder-gallery .folder-gallery-nav .close {
@@ -119,6 +121,7 @@
   position: sticky;
   top: 60px;
   background-color: #F8FFFE;
+  z-index: 10;
 }
 
 .folder-gallery .gallery-container .selection .selection-button {
@@ -144,7 +147,7 @@
   margin-top: 10px;
 }
 
-.folder-gallery .gallery-container .gallery-data .pictures-grids {
+.folder-gallery .gallery-container .gallery-data .data-grids {
   width: 100%;
   display: -ms-grid;
   display: grid;
@@ -153,12 +156,41 @@
       grid-template-columns: repeat(3, 1fr);
 }
 
-.folder-gallery .gallery-container .gallery-data .pictures-grids .picture-grid .picture-container {
-  margin-top: 10px;
+.folder-gallery .gallery-container .gallery-data .data-grids .data-grid .data-container {
+  padding-top: 10px;
+  overflow: hidden;
 }
 
-.folder-gallery .gallery-container .gallery-data .pictures-grids .picture-grid .picture-container img {
+.folder-gallery .gallery-container .gallery-data .data-grids .data-grid .data-container img {
   width: 100%;
+  min-height: 120px;
+  max-height: 240px;
   border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.folder-gallery .gallery-container .gallery-data .data-grids .data-grid .data-container .video-thumbnail {
+  min-height: 120px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.folder-gallery .gallery-container .gallery-data .data-grids .data-grid .data-container .video-thumbnail .react-thumbnail-generator img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-height: 120px;
+}
+
+.folder-gallery .gallery-container .gallery-data .data-grids .data-grid .data-container .video-thumbnail .thumbnail-darker {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
 }
 /*# sourceMappingURL=FolderGallery.css.map */

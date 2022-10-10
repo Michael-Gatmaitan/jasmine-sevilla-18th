@@ -10,6 +10,7 @@
   top: 0;
   z-index: 100;
   overflow-y: scroll;
+  overflow-x: hidden;
 
   &::-webkit-scrollbar {
     display: none;
@@ -29,6 +30,7 @@
     top: 0;
     margin-bottom: 48px;
     background-color: $body_bg;
+    z-index: 10;
 
     .close {
       width: 30px;
@@ -65,6 +67,7 @@
       position: sticky;
       top: 60px;
       background-color: $body_bg;
+      z-index: 10;
 
       .selection-button {
         padding: 8px 12px;
@@ -84,19 +87,55 @@
 
       .h-2 { margin-top: 10px; }
 
-      .pictures-grids {
+      .data-grids {
         width: 100%;
         display: grid;
         gap: 10px;
         grid-template-columns: repeat(3, 1fr);
 
-        .picture-grid {
+        .data-grid {
           
-          .picture-container {
-            margin-top: 10px;
+          .data-container {
+            padding-top: 10px;
+            overflow: hidden;
+            
+            // For pictures
             img {
               width: 100%;
+              min-height: 120px;
+              max-height: 240px;
               border-radius: 8px;
+              object-fit: cover;
+            }
+
+            // For Videos
+            .video-thumbnail {
+              min-height: 120px;
+              position: relative;
+              cursor: pointer;
+              overflow: hidden;
+              border-radius: 8px;
+
+              .react-thumbnail-generator {
+                // video {
+                //   width: 33.3%;
+                // }
+
+                img {
+                  object-fit: cover;
+                  min-height: 120px;
+                }
+              }
+
+              .thumbnail-darker {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(#000, 0.5);
+                pointer-events: none;
+              }
             }
           }
         }
