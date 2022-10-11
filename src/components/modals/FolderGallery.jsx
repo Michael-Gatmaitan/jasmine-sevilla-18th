@@ -43,7 +43,7 @@ const FolderGallery = props => {
   const picturesIsNotEmpty = pictures.length !== 0;
   const videosIsNotEmpty = videos.length !== 0;
 
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(true);
 
   const [activeSubFolder, setActiveSubFolder] = useState(
     (videos.length <= 0 && pictures.length >= 1) ? 'Pictures' :
