@@ -42,7 +42,6 @@
 
 .message-18th .message-container {
   margin-top: 48px;
-  width: 90%;
 }
 
 .message-18th .message-container .message-header {
@@ -50,6 +49,7 @@
 }
 
 .message-18th .message-container .message-body {
+  width: 90%;
   color: rgba(255, 255, 255, 0.8);
   margin-top: 12px;
 }

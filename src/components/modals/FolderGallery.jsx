@@ -23,6 +23,8 @@ const FolderGallery = props => {
   const [imagesByColumn, setImagesByColumn] = useState([]);
   const [videosByColumn, setVideosByColumn] = useState([]);
 
+  const [activeSubFolder, setActiveSubFolder] = useState('Pictures');
+
   useEffect(() => {
 
     if (pictures) {
@@ -37,20 +39,17 @@ const FolderGallery = props => {
       setVideosByColumn(videosByColumn);
     }
 
-    console.log("Render gallery data");
+    setActiveSubFolder(
+      (videos.length <= 0 && pictures.length >= 1) ? 'Pictures' :
+    (pictures.length <= 0 && videos.length >= 1) ? 'Videos' :
+    'Pictures'
+    );
   }, [galleryData, pictures, videos]);
 
   const picturesIsNotEmpty = pictures.length !== 0;
   const videosIsNotEmpty = videos.length !== 0;
 
   const [isVideoLoaded, setIsVideoLoaded] = useState(true);
-
-  const [activeSubFolder, setActiveSubFolder] = useState(
-    (videos.length <= 0 && pictures.length >= 1) ? 'Pictures' :
-    (pictures.length <= 0 && videos.length >= 1) ? 'Videos' :
-    'Pictures'
-  );
-
   const variant = {
     initial: {
       opacity: 0,
@@ -130,6 +129,7 @@ const FolderGallery = props => {
                           <div className="data-container" key={j}>
                             <LazyLoadImage
                               src={`${galleryData.paths.pictures}${image}`}
+                              className="gallery-images"
                               alt={image}
                             />
                           </div>
@@ -152,10 +152,11 @@ const FolderGallery = props => {
                               }}
                             >
                               <div className="thumbnail-darker" />
+                              <img src="./svg/icons/play.svg" alt="play_icon" className="play" />
+
                               <VideoThumbnail
                                 videoUrl={`${galleryData.paths.videos}${video}`}
                                 thumbnailHandler={ () => setIsVideoLoaded(true) }
-                                onSeeked={() => console.log("Seeked")}
                               />
                             </div>
                           </div>
