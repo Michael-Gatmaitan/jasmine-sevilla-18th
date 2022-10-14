@@ -49,11 +49,11 @@ const Home = () => {
         <div className="welcome-images">
 
           <div className="image-container">
-            <img src="./our_data/special_memories/simple_images/pictures/flower.jpg" alt="flower" />
+            <img src="/our_data/special_memories/simple_images/pictures/flower.jpg" alt="flower" />
           </div>
 
           <div className="image-container">
-            <img src="./our_data/special_memories/simple_images/pictures/received_1104838777077504.jpeg" alt="us_stickfigure_version" />
+            <img src="/our_data/special_memories/simple_images/pictures/received_1104838777077504.jpeg" alt="us_stickfigure_version" />
           </div>
 
         </div>
