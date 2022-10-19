@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Source+Sans+Pro:wght@400;600&display=swap");
+.h-1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  color: #121212;
+}
+
+.h-2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #121212;
+}
+
+.btn-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #121212;
+}
+
+.body-text {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(18, 18, 18, 0.8);
+}
+
+.video-player {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.video-player .close-video-player {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+}
+
+.video-player .player {
+  width: calc(100% - 28px);
+  height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #f00;
+}
+/*# sourceMappingURL=VideoPlayer.css.map */
