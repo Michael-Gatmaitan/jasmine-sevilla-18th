@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
 import { data } from '../imageData.js';
 import { motion } from 'framer-motion';
 import { pageAnimationVariant } from '../pageAnimationVariant';
+import { Link } from 'react-router-dom';
 
 import PageBody from './reusable/PageBody';
-import FolderGallery from './modals/FolderGallery';
+// import FolderGallery from './modals/FolderGallery';
 
 import './scss/Gallery.css';
 
-const Gallery = () => {
+const Gallery = props => {
+  //
+  const { setGalleryData } = props;
+  //
 
   const { explore, special_memories } = data;
   const folderInfos = [
@@ -23,30 +26,30 @@ const Gallery = () => {
     }
   ];
 
-  const [showFolderGallery, setShowFolderGallery] = useState(false);
+  // const [showFolderGallery, setShowFolderGallery] = useState(false);
 
   // Boilerplate only
-  const [galleryData, setGalleryData] = useState({
-    "folderTitle": "",
-    "paths": {
-      "pictures": "",
-      "videos": "",
-    },
+  // const [galleryData, setGalleryData] = useState({
+  //   "folderTitle": "",
+  //   "paths": {
+  //     "pictures": "",
+  //     "videos": "",
+  //   },
 
-    "files": {
-      "pictures": [],
-      "videos": [],
-    }
-  });
+  //   "files": {
+  //     "pictures": [],
+  //     "videos": [],
+  //   }
+  // });
 
   return (
-    <React.Fragment>
+    <>
 
-      <FolderGallery
+      {/* <FolderGallery
         showFolderGallery={showFolderGallery}
         setShowFolderGallery={setShowFolderGallery}
         galleryData={galleryData}
-      />
+      /> */}
 
       <motion.div className="gallery container"
         variants={pageAnimationVariant}
@@ -62,7 +65,6 @@ const Gallery = () => {
             <FolderSection
               folderInfo={folderInfo}
               setGalleryData={setGalleryData}
-              setShowFolderGallery={setShowFolderGallery}
               key={i}
             />
           ))}
@@ -75,15 +77,15 @@ const Gallery = () => {
 Thank you for everything you’ve done with me and for staying with me kahit na minsan di tayo nagkakaintindihan. Di a dito natatapos ang lahat hon! Madami pa tayong dadaanan at pagdadaanan na magiging memories natin na titignan natin as a lesson soon! I love you.</div>
         </div>
       </motion.div>
-    </React.Fragment>
+    </>
   )
 }
 
 const FolderSection = props => {
+
   const {
     folderInfo,
-    setGalleryData,
-    setShowFolderGallery
+    setGalleryData
   } = props;
 
   const {
@@ -98,23 +100,23 @@ const FolderSection = props => {
 
       <div className="folder-block">
         {folderData.map((folder, i) => (
+          <Link to={`/gallery/${folder.folderTitle}`}>
           <FolderContainer
             folder={folder}
             setGalleryData={setGalleryData}
-            setShowFolderGallery={setShowFolderGallery}
             key={i}
           />
+          </Link>
         ))}
       </div>
     </div>
   )
 }
 
-const FolderContainer = ({ folder, setGalleryData, setShowFolderGallery }) => (
+const FolderContainer = ({ folder, setGalleryData }) => (
   <div className="folder-container"
     onClick={() => {
-      setShowFolderGallery(true);
-      console.log("Gallery Clicked.");
+      // setShowFolderGallery(true);
       setGalleryData(folder);
     }}
   >

@@ -4,6 +4,8 @@ import './scss/SideBar.css';
 
 const SideBar = props => {
 
+  const { PUBLIC_URL } = process.env;
+
   const {
     showSideBar,
     setShowSideBar
@@ -86,11 +88,11 @@ const SideBar = props => {
         
           <div className="sidebar-nav">
             <div className="close" onClick={ () => setShowSideBar(false) }>
-              <img src="./svg/icons/close_black.svg" alt="close" />
+              <img src={`${PUBLIC_URL}/svg/icons/close_black.svg`} alt="close" />
             </div>
 
             <div className="logo">
-              <img src="./svg/icons/jm_black.svg" alt="logo" />
+              <img src={`${PUBLIC_URL}/svg/icons/jm_black.svg`} alt="logo" />
             </div>
 
             <div>
@@ -130,7 +132,7 @@ const SideBar = props => {
           <div className="profile-container">
             <div className="profile-border">
               <div className="profile">
-                <img src="./svg/profile_picture.png" alt="profile" />
+                <img src={`${PUBLIC_URL}/svg/profile_picture.png`} alt="profile" />
               </div>
             </div>
 

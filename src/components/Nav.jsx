@@ -1,9 +1,10 @@
 import './scss/Nav.css';
 
 const Nav = ({setShowSideBar})=> {
-
-  const logo = "./svg/icons/jm_black.svg";
-  const burger = "./svg/icons/burger.svg";
+  const { PUBLIC_URL } = process.env;
+  
+  const logo = `${PUBLIC_URL}/svg/icons/jm_black.svg`;
+  const burger = `${PUBLIC_URL}/svg/icons/burger.svg`;
 
   return (
     <nav className="main-nav">

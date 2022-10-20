@@ -14,13 +14,26 @@ import Home from './components/Home';
 import Eighteenth from './components/Eighteenth';
 import Gallery from './components/Gallery';
 import QuoteFooter from './components/QuoteFooter';
-
+import FolderGallery from './components/modals/FolderGallery';
 import './mixins.css';
 
 const App = () => {
   const location = useLocation();
 
   const [showSideBar, setShowSideBar] = useState(false);
+
+  const [galleryData, setGalleryData] = useState({
+    "folderTitle": "",
+    "paths": {
+      "pictures": "",
+      "videos": "",
+    },
+
+    "files": {
+      "pictures": [],
+      "videos": [],
+    }
+  });
   
   return (
     <React.Fragment>
@@ -35,9 +48,21 @@ const App = () => {
 
       <AnimatePresence>
         <Routes location={location} key={location.key}>
-          <Route path="/gallery" element={<Gallery />} />
+
+          <Route path="/gallery">
+            <Route
+              index
+              element={ <Gallery setGalleryData={setGalleryData}/> }
+            />
+            
+            <Route path=":galleryId" element={<FolderGallery galleryData={galleryData} />} />
+          </Route>
+
           <Route path="/18th" element={<Eighteenth />} />
           <Route exact path="/" element={<Home />} />
+
+          {/* Use react-router's v5 intead of v6 */}
+          {/* Nested Routing *Experimental* */}
         </Routes>
       </AnimatePresence>
 
@@ -45,5 +70,14 @@ const App = () => {
     </React.Fragment>
   );
 }
+
+// const GalleryFolderExample = ({ galleryData }) => {
+//   // const { galleryId } = useParams();
+//   const { folderTitle } = galleryData;
+
+//   return (
+//     <div>ASD{folderTitle}</div>
+//   )
+// }
 
 export default App;

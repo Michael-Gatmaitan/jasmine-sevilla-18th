@@ -1,3 +1,5 @@
+const { PUBLIC_URL } = process.env;
+
 const data = {
 
   "explore": [
@@ -5,8 +7,8 @@ const data = {
       "folderTitle": "Jasmine",
 
       "paths": {
-        "pictures": "./our_data/jasmine/pictures/",
-        "videos": "./our_data/jasmine/videos/", 
+        "pictures": `${PUBLIC_URL}/our_data/jasmine/pictures/`,
+        "videos": `${PUBLIC_URL}/our_data/jasmine/videos/`,
       },
 
       "files": {
@@ -1041,8 +1043,8 @@ const data = {
       "folderTitle": "Us",
 
       "paths": {
-        "pictures": "./our_data/us/pictures/",
-        "videos": "./our_data/us/videos/",
+        "pictures": `${PUBLIC_URL}/our_data/us/pictures/`,
+        "videos": `${PUBLIC_URL}/our_data/us/videos/`,
       },
 
       "files": {
@@ -2171,9 +2173,6 @@ const data = {
           "Snapchat-477803541.mp4",
           "Snapchat-86910379.mp4",
           "Snapchat-1897691019.mp4",
-          "VID_20221001_115901244.mp4",
-          "VID_20221001_115901244_02.mp4",
-          "VID_20221001_115901244_03.mp4",
           "Snapchat-55991110.mp4",
           "Snapchat-81982346.mp4",
         ]
@@ -2187,7 +2186,7 @@ const data = {
       "folderTitle": "Bike with you",
       "paths": {
         "pictures": "",
-        "videos": "./our_data/special_memories/bike_with_you/videos/",
+        "videos": `${PUBLIC_URL}/our_data/special_memories/bike_with_you/videos/`,
       },
 
       "files": {
@@ -2198,8 +2197,8 @@ const data = {
     {
       "folderTitle": "Day After Tommorow of 1st year of chatting me",
       "paths": {
-        "pictures": "./our_data/special_memories/day_after_tommorow_of_1st_year_of_chatting_me/pictures/",
-        "videos": "./our_data/special_memories/day_after_tommorow_of_1st_year_of_chatting_me/videos/",
+        "pictures": `${PUBLIC_URL}/our_data/special_memories/day_after_tommorow_of_1st_year_of_chatting_me/pictures/`,
+        "videos": `${PUBLIC_URL}/our_data/special_memories/day_after_tommorow_of_1st_year_of_chatting_me/videos/`,
       },
 
       "files": {
@@ -2210,7 +2209,7 @@ const data = {
     {
       "folderTitle": "First snapchat at house",
       "paths": {
-        "pictures": "./our_data/special_memories/first_snapchat_at_house/pictures/",
+        "pictures": `${PUBLIC_URL}/our_data/special_memories/first_snapchat_at_house/pictures/`,
         "videos": "",
       },
 
@@ -2223,7 +2222,7 @@ const data = {
       "folderTitle": "First Tiktok",
       "paths": {
         "pictures": "",
-        "videos": "./our_data/special_memories/first_tiktok/videos/",
+        "videos": `${PUBLIC_URL}/our_data/special_memories/first_tiktok/videos/`,
       },
 
       "files": {
@@ -2234,8 +2233,8 @@ const data = {
     {
       "folderTitle": "My 20th Birthday",
       "paths": {
-        "pictures": "./our_data/special_memories/my_20th_birthday/pictures/",
-        "videos": "./our_data/special_memories/my_20th_birthday/videos/",
+        "pictures": `${PUBLIC_URL}/our_data/special_memories/my_20th_birthday/pictures/`,
+        "videos": `${PUBLIC_URL}/our_data/special_memories/my_20th_birthday/videos/`,
       },
 
       "files": {
@@ -2246,7 +2245,7 @@ const data = {
     {
       "folderTitle": "Night pictorial",
       "paths": {
-        "pictures": "./our_data/special_memories/night_pictorial/pictures/",
+        "pictures": `${PUBLIC_URL}/our_data/special_memories/night_pictorial/pictures/`,
         "videos": "",
       },
 
@@ -2258,8 +2257,8 @@ const data = {
     {
       "folderTitle": "Places weve been at our First meet",
       "paths": {
-        "pictures": "./our_data/special_memories/places_weve_been_in_our_first_meet/pictures/",
-        "videos": "./our_data/special_memories/places_weve_been_in_our_first_meet/videos/",
+        "pictures": `${PUBLIC_URL}/our_data/special_memories/places_weve_been_in_our_first_meet/pictures/`,
+        "videos": `${PUBLIC_URL}/our_data/special_memories/places_weve_been_in_our_first_meet/videos/`,
       },
 
       "files": {
@@ -2270,7 +2269,7 @@ const data = {
     {
       "folderTitle": "Simple images",
       "paths": {
-        "pictures": "./our_data/special_memories/simple_images/pictures/",
+        "pictures": `${PUBLIC_URL}/our_data/special_memories/simple_images/pictures/`,
         "videos": "",
       },
 
@@ -2282,13 +2281,13 @@ const data = {
     {
       "folderTitle": "Your 18th birthday",
       "paths": {
-        "pictures": "./our_data/special_memories/your_18th_birthday/pictures/",
-        "videos": "./our_data/special_memories/your_18th_birthday/videos/",
+        "pictures": `${PUBLIC_URL}/our_data/special_memories/your_18th_birthday/pictures/`,
+        "videos": `${PUBLIC_URL}/our_data/special_memories/your_18th_birthday/videos/`,
       },
 
       "files": {
       "pictures": ["Snapchat-456988274.jpg", "Snapchat-610773581.jpg", "Snapchat-1500881584.jpg", "Snapchat-872087902.jpg", "Snapchat-885651854.jpg", "Snapchat-1103666133.jpg", "Snapchat-23622276.jpg", "Snapchat-687554139.jpg", "Snapchat-925517809.jpg", "Snapchat-1408436673.jpg", "Snapchat-1597248754.jpg", "Snapchat-1624848628.jpg", "Snapchat-1712226586.jpg", "Snapchat-456863844.jpg", "Snapchat-139862429.jpg", "Snapchat-2119619542.jpg", "Snapchat-218723294.jpg", "Snapchat-1747845567.jpg", "Snapchat-1232491229.jpg", "Snapchat-1808587223.jpg", "Snapchat-1867909464.jpg", "Snapchat-496155723.jpg", "Snapchat-731731759.jpg", "Snapchat-223657558.jpg", "Snapchat-254437583.jpg", "Snapchat-1673547440.jpg", "Snapchat-319404362.jpg", "Snapchat-106925686.jpg", "Snapchat-1151832029.jpg", "Snapchat-1196726368.jpg", "Snapchat-133147439.jpg", "Snapchat-1977903879.jpg", "Snapchat-1284355701.jpg", "Snapchat-171503213.jpg", "Snapchat-421189263.jpg", "Snapchat-508608529.jpg", "Snapchat-1297645003.jpg", "Snapchat-1817073492.jpg", "Snapchat-499764448.jpg", "Snapchat-1662233477.jpg", "Snapchat-304025193.jpg", "Snapchat-42798144.jpg", "Snapchat-849664138.jpg", "Snapchat-2055957665.jpg", "Snapchat-951326577.jpg", "Snapchat-248434466.jpg", "Snapchat-478043541.jpg", "Snapchat-1155290097.jpg", "IMG_20221001_163809114.jpg", "IMG_20221001_163759651_HDR.jpg", "IMG_20221001_163749329_HDR.jpg", "IMG_20221001_163731314_HDR.jpg", "Snapchat-312917583.jpg", "Snapchat-2110234471.jpg", "Snapchat-1477805508.jpg", "Snapchat-617312806.jpg", "Snapchat-1038084395.jpg", "Snapchat-843137057.jpg", "IMG_20221001_163044822.jpg", "IMG_20221001_162616205_HDR.jpg", "IMG_20221001_162613518_HDR.jpg", "IMG_20221001_162606475_HDR.jpg", "IMG_20221001_162601450_HDR.jpg", "IMG_20221001_161731472.jpg", "IMG_20221001_161713387_HDR.jpg", "IMG_20221001_161658088.jpg", "IMG_20221001_161111996.jpg", "IMG_20221001_155042874.jpg", "IMG_20221001_155035730.jpg", "IMG_20221001_155028932.jpg", "IMG_20221001_155021164.jpg", "IMG_20221001_155015353.jpg", "IMG_20221001_155012338.jpg", "IMG_20221001_155010840.jpg", "Snapchat-1605851323.jpg", "Snapchat-1448842063.jpg", "Snapchat-991805924.jpg", "Snapchat-1264621188.jpg", "Snapchat-1482782094.jpg", "Snapchat-754129902.jpg", "Snapchat-1299959929.jpg", "IMG_20221001_144149974_HDR.jpg", "IMG_20221001_144146587_HDR.jpg", "IMG_20221001_144143782_HDR.jpg", "IMG_20221001_144114948_HDR.jpg", "IMG_20221001_144108796_HDR.jpg", "Snapchat-1115855416.jpg", "Snapchat-1455142927.jpg", "Snapchat-280452923.jpg", "Snapchat-696946743.jpg", "Snapchat-1101817171.jpg", "Snapchat-1676243739.jpg", "Snapchat-1954873152.jpg", "Snapchat-85069521.jpg", "IMG_20221001_143751439.jpg", "IMG_20221001_143753049.jpg", "IMG_20221001_143749083.jpg", "IMG_20221001_143619897.jpg", "IMG_20221001_143629833.jpg", "IMG_20221001_143625388_HDR.jpg", "IMG_20221001_143616922.jpg", "IMG_20221001_143547748_HDR.jpg", "IMG_20221001_143551212_HDR.jpg", "IMG_20221001_143541349_HDR.jpg", "Snapchat-1495148880.jpg", "Snapchat-1897893163.jpg", "Snapchat-1092732374.jpg", "Snapchat-1511599866.jpg", "Snapchat-1984656166.jpg", "Snapchat-2015557822.jpg", "Snapchat-452236467.jpg", "Snapchat-775472221.jpg", "Snapchat-167452408.jpg", "Snapchat-301011364.jpg", "Snapchat-865995477.jpg", "Snapchat-371941181.jpg", "Snapchat-66730569.jpg", "Snapchat-1147745877.jpg", "Snapchat-1511028675.jpg", "Snapchat-848504056.jpg", "Snapchat-1027932562.jpg", "Snapchat-1449346210.jpg", "Snapchat-618755517.jpg", "Snapchat-435881554.jpg", "Snapchat-482231532.jpg", "Snapchat-1120101002.jpg", "Snapchat-1159001212.jpg", "Snapchat-1811349454.jpg", "Snapchat-2140495121.jpg", "Snapchat-123776289.jpg", "Snapchat-278828190.jpg", "Snapchat-1681352660.jpg", "Snapchat-1788666618.jpg", "Snapchat-1902642222.jpg", "Snapchat-1046496266.jpg", "Snapchat-1346731859.jpg", "Snapchat-2070282237.jpg", "Snapchat-765498789.jpg", "Snapchat-1170566034.jpg", "Snapchat-1029531770.jpg", "Snapchat-1148476453.jpg", "Snapchat-1608905982.jpg", "Snapchat-1163347268.jpg", "Snapchat-909983980.jpg", "Snapchat-1245625226.jpg", "Snapchat-1482775791.jpg", "Snapchat-1995432116.jpg", "Snapchat-1665164499.jpg", "Snapchat-1927152013.jpg", "Snapchat-2023779846.jpg", "Snapchat-956523987.jpg", "Snapchat-1090186465.jpg", "Snapchat-1775550403.jpg", "Snapchat-211984927.jpg", "Snapchat-1029213611.jpg", "Snapchat-1781395930.jpg", "Snapchat-1803715227.jpg", "Snapchat-2109872373.jpg", "Snapchat-573053597.jpg", "Snapchat-866937247.jpg", "Snapchat-1752257868.jpg", "Snapchat-2090351313.jpg", "Snapchat-945553829.jpg", "Snapchat-976882262.jpg", "Snapchat-878518673.jpg", "Snapchat-851684562.jpg", "Snapchat-68240331.jpg", "Snapchat-1128236630.jpg", "Snapchat-406213763.jpg", "Snapchat-1044470646.jpg", "Snapchat-1369556686.jpg", "Snapchat-539687713.jpg", "Snapchat-907134378.jpg", "Snapchat-1550909410.jpg", "Snapchat-2138653475.jpg", "Snapchat-475906874.jpg", "Snapchat-1699664088.jpg", "Snapchat-1861258145.jpg", "Snapchat-777985892.jpg", "Snapchat-940192100.jpg", "Snapchat-128289644.jpg", "Snapchat-1603528176.jpg", "Snapchat-1608764699.jpg", "Snapchat-2059153446.jpg", "Snapchat-1190887991.jpg", "Snapchat-1299638317.jpg", "Snapchat-1755019398.jpg", "Snapchat-1874956553.jpg", "Snapchat-48990134.jpg", "Snapchat-799340922.jpg", "Snapchat-80156419.jpg", "Snapchat-1915670366.jpg", "Snapchat-1025360641.jpg", "Snapchat-1832163839.jpg", "Snapchat-2018550007.jpg", "Snapchat-1030372452.jpg", "Snapchat-158012479.jpg", "Snapchat-2130468341.jpg", "Snapchat-867090448.jpg", "Snapchat-915772719.jpg", "Snapchat-802758227.jpg", "Snapchat-844845874.jpg", "Snapchat-2063462855.jpg", "Snapchat-619610946.jpg", "Snapchat-1681685565.jpg", "Snapchat-116685103.jpg", "Snapchat-1707241642.jpg", "Snapchat-548891501.jpg", "Snapchat-1320460976.jpg", "Snapchat-119732382.jpg", "Snapchat-819578971.jpg", "Snapchat-51502621.jpg", "Snapchat-766961881.jpg", "Snapchat-689559964.jpg", "Snapchat-79978834.jpg", "Snapchat-685437117.jpg", "Snapchat-1656626985.jpg", "Snapchat-582316044.jpg", "Snapchat-1671681422.jpg", "Snapchat-940003084.jpg", "Snapchat-453263875.jpg", "Snapchat-564869942.jpg",],
-      "videos": ["Snapchat-86910379.mp4","Snapchat-1897691019.mp4","VID_20221001_115901244.mp4","VID_20221001_115901244_02.mp4","VID_20221001_115901244_03.mp4","Snapchat-55991110.mp4","Snapchat-81982346.mp4",],
+      "videos": ["Snapchat-86910379.mp4","Snapchat-1897691019.mp4", "Snapchat-55991110.mp4","Snapchat-81982346.mp4",],
       }
     },
     

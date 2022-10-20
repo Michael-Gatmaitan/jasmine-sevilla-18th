@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import VideoPlayer from '../modals/VideoPlayer';
+// import VideoPlayer from '../modals/VideoPlayer';
 
 import './FolderGallery.css';
 
 // npm module for generating video thumbnail
 import VideoThumbnail from 'react-video-thumbnail';
 
+const { PUBLIC_URL } = process.env;
+
 const FolderGallery = props => {
+  // const { galleryId } = useParams();
 
   const {
-    showFolderGallery,
-    setShowFolderGallery,
     galleryData
   } = props;
   
@@ -74,118 +75,155 @@ const FolderGallery = props => {
     }
   }
 
-  const [showVideoPlayer, setShowVideoPlayer] = useState(true);
+  const navigate = useNavigate();
+
+  // const [showVideoPlayer, setShowVideoPlayer] = useState(true);
 
   return (
     <AnimatePresence>
-      {showFolderGallery && (
 
-        <React.Fragment>
+      <motion.div className="folder-gallery"
+        variants={variant}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
+        {/* <VideoPlayer
+          showVideoPlayer={showVideoPlayer}
+          setShowVideoPlayer={setShowVideoPlayer}
+        /> */}
 
-          <motion.div className="folder-gallery"
-            variants={variant}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-          >
-            <VideoPlayer
-              showVideoPlayer={showVideoPlayer}
-              setShowVideoPlayer={setShowVideoPlayer}
-            />
+        <div className="folder-gallery-nav">
+          <div className="close" onClick={ () => {
+            // Set BACK FUNCTION
+            navigate('/gallery', { replace: true });
+            setIsVideoLoaded(false);
+          }}>
+            <img src={`${PUBLIC_URL}/svg/icons/close_black.svg`} alt="close" />
+          </div>
 
-            <div className="folder-gallery-nav">
-              <div className="close" onClick={ () => {
-                setShowFolderGallery(false);
-                setIsVideoLoaded(false);
-              }}>
-                <img src="./svg/icons/close_black.svg" alt="close" />
-              </div>
+          <div className="logo">
+            <img src={`${PUBLIC_URL}/svg/icons/jm_black.svg`} alt="logo" />
+          </div>
+          
+          <div className="download-folder">
+            <Link to={galleryData.paths.pictures} target="_blank" download>
+              <img src={`${PUBLIC_URL}/svg/icons/download.svg`} alt="download_folder" />
+            </Link>
+          </div>
 
-              <div className="logo">
-                <img src="./svg/icons/jm_black.svg" alt="logo" />
-              </div>
-              
-              <div className="download-folder">
-                <Link to={galleryData.paths.pictures} target="_blank" download>
-                  <img src="./svg/icons/download.svg" alt="download_folder" />
-                </Link>
-              </div>
+        </div>
+
+        {galleryData && (
+          <div className="gallery-container">
+            <div className="folder-label">Folder</div>
+
+            <div className="h-1">{galleryData.folderTitle}</div>
+
+            <div className="selection">
+
+            {picturesIsNotEmpty &&
+              <button className={`selection-button ${activeSubFolder === "Pictures" ? 'active-selection' : ""}`} onClick={() => setActiveSubFolder("Pictures") }>Pictures</button>
+            }
+            {videosIsNotEmpty &&
+              <button className={`selection-button ${activeSubFolder === "Videos" ? 'active-selection' : ""}`} onClick={() => setActiveSubFolder("Videos") }>Videos</button>
+            }
 
             </div>
 
-            {galleryData && (
-              <div className="gallery-container">
-                <div className="folder-label">Folder</div>
+            <div className="gallery-data">
+              {picturesIsNotEmpty &&
+                <PicturesGalleryBody
+                  activeSubFolder={activeSubFolder}
+                  imagesByColumn={imagesByColumn}
+                  galleryData={galleryData}
+                />
+              }
 
-                <div className="h-1">{galleryData.folderTitle}</div>
+              {videosIsNotEmpty &&
+                <VideosGalleryBody
+                  activeSubFolder={activeSubFolder}
+                  videosByColumn={videosByColumn}
+                  isVideoLoaded={isVideoLoaded}
+                  setIsVideoLoaded={setIsVideoLoaded}
+                  galleryData={galleryData}
+                />
+              }
+            </div>
+          </div>
+        )}
 
-                <div className="selection">
+      </motion.div>
+    </AnimatePresence>
+  )
+}
 
-                {picturesIsNotEmpty &&
-                  <button className={`selection-button ${activeSubFolder === "Pictures" ? 'active-selection' : ""}`} onClick={() => setActiveSubFolder("Pictures") }>Pictures</button>
-                }
-                {videosIsNotEmpty &&
-                  <button className={`selection-button ${activeSubFolder === "Videos" ? 'active-selection' : ""}`} onClick={() => setActiveSubFolder("Videos") }>Videos</button>
-                }
+const PicturesGalleryBody = props => {
+  const {
+    activeSubFolder,
+    imagesByColumn,
+    galleryData
+  } = props;
 
-                </div>
+  return (
+    <>
+      <div className="h-2" style={{ display: activeSubFolder === "Pictures" ? "block" : "none" }}>Pictures</div>
+      <div className="data-grids" style={{ display: activeSubFolder === "Pictures" ? "grid" : "none" }}>
+        {imagesByColumn.map((imageColumn, i) => (
+          <div className="data-grid" key={i}>
+            {imageColumn.map((image, j) =>(
+              <div className="data-container" key={j}>
+                <LazyLoadImage
+                  src={`${galleryData.paths.pictures}${image}`}
+                  className="gallery-images"
+                  alt={image}
+                />
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </>
+  )
+}
 
-                <div className="gallery-data">
-                  {picturesIsNotEmpty && (<>
-                    <div className="h-2" style={{ display: activeSubFolder === "Pictures" ? "block" : "none" }}>Pictures</div>
-                    <div className="data-grids" style={{ display: activeSubFolder === "Pictures" ? "grid" : "none" }}>
-                      {imagesByColumn.map((imageColumn, i) => (
-                        <div className="data-grid" key={i}>
-                          {imageColumn.map((image, j) =>(
-                            <div className="data-container" key={j}>
-                              <LazyLoadImage
-                                src={`${galleryData.paths.pictures}${image}`}
-                                className="gallery-images"
-                                alt={image}
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      ))}
-                    </div>
-                  </>
-                  )}
+const VideosGalleryBody = props => {
 
-                  {videosIsNotEmpty && (<>
-                    <div className="h-2" style={{ display: activeSubFolder === "Videos" ? "block" : "none" }}>Videos</div>
-                    <div className="data-grids" style={{ display: activeSubFolder === "Videos" ? "grid" : "none" }}>
-                      {videosByColumn.map((videoColumn, i) => (
-                        <div className="data-grid" key={i}>
-                          {videoColumn.map((video, j) => (
-                            <div className="data-container" key={j}>
-                              <div className="video-thumbnail"
-                                style={{
-                                  display: isVideoLoaded ? "block" : "none"
-                                }}
-                              >
-                                <div className="thumbnail-darker" />
-                                <img src="./svg/icons/play.svg" alt="play_icon" className="play" />
+  const {
+    activeSubFolder,
+    videosByColumn,
+    isVideoLoaded,
+    setIsVideoLoaded,
+    galleryData
+  } = props;
 
-                                <VideoThumbnail
-                                  videoUrl={`${galleryData.paths.videos}${video}`}
-                                  thumbnailHandler={ () => setIsVideoLoaded(true) }
-                                />
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      ))}
-                    </div>
-                  </>)}
+  return (
+    <>
+      <div className="h-2" style={{ display: activeSubFolder === "Videos" ? "block" : "none" }}>Videos</div>
+      <div className="data-grids" style={{ display: activeSubFolder === "Videos" ? "grid" : "none" }}>
+        {videosByColumn.map((videoColumn, i) => (
+          <div className="data-grid" key={i}>
+            {videoColumn.map((video, j) => (
+              <div className="data-container" key={j}>
+                <div className="video-thumbnail"
+                  style={{
+                    display: isVideoLoaded ? "block" : "none"
+                  }}
+                >
+                  <div className="thumbnail-darker" />
+                  <img src={`${PUBLIC_URL}/svg/icons/play.svg`} alt="play_icon" className="play" />
+
+                  <VideoThumbnail
+                    videoUrl={`${galleryData.paths.videos}${video}`}
+                    thumbnailHandler={ () => setIsVideoLoaded(true) }
+                  />
                 </div>
               </div>
-            )}
-
-          </motion.div>
-
-        </React.Fragment>
-      )}
-    </AnimatePresence>
+            ))}
+          </div>
+        ))}
+      </div>
+    </>
   )
 }
 
