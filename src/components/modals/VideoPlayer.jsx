@@ -1,10 +1,15 @@
+import ReactPlayer from 'react-player';
 import './VideoPlayer.css';
+
+const { PUBLIC_URL } = process.env;
 
 const VideoPlayer = props => {
 
   const {
     showVideoPlayer,
-    setShowVideoPlayer
+    setShowVideoPlayer,
+    videoSrc,
+    setVideoSrc
   } = props;
 
   return (
@@ -14,13 +19,23 @@ const VideoPlayer = props => {
       }}
     >
       <div
-        onClick={ () => setShowVideoPlayer(false) }
+        onClick={ () => {
+          setShowVideoPlayer(false);
+          setVideoSrc(".");
+        } }
         className="close-video-player"
       >
-
+        <img src={`${PUBLIC_URL}/svg/icons/close_black.svg`} alt="close" />
       </div>
 
-      <div className="player"></div>
+      <div className="player">
+        <ReactPlayer
+          playing={true}
+          controls={true}
+          url={videoSrc}
+          className="video-element"
+        />
+      </div>
     </div>
 
   )

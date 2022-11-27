@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-// import VideoPlayer from '../modals/VideoPlayer';
+import VideoPlayer from '../modals/VideoPlayer';
+// import ReactPlayer from 'react-player';
 
 import './FolderGallery.css';
 
@@ -77,7 +78,8 @@ const FolderGallery = props => {
 
   const navigate = useNavigate();
 
-  // const [showVideoPlayer, setShowVideoPlayer] = useState(true);
+  const [showVideoPlayer, setShowVideoPlayer] = useState(false);
+  const [videoSrc, setVideoSrc] = useState(".");
 
   return (
     <AnimatePresence>
@@ -88,10 +90,12 @@ const FolderGallery = props => {
         animate="animate"
         exit="exit"
       >
-        {/* <VideoPlayer
+        <VideoPlayer
           showVideoPlayer={showVideoPlayer}
           setShowVideoPlayer={setShowVideoPlayer}
-        /> */}
+          videoSrc={videoSrc}
+          setVideoSrc={setVideoSrc}
+        />
 
         <div className="folder-gallery-nav">
           <div className="close" onClick={ () => {
@@ -146,6 +150,8 @@ const FolderGallery = props => {
                   videosByColumn={videosByColumn}
                   isVideoLoaded={isVideoLoaded}
                   setIsVideoLoaded={setIsVideoLoaded}
+                  setShowVideoPlayer={setShowVideoPlayer}
+                  setVideoSrc={setVideoSrc}
                   galleryData={galleryData}
                 />
               }
@@ -194,6 +200,8 @@ const VideosGalleryBody = props => {
     videosByColumn,
     isVideoLoaded,
     setIsVideoLoaded,
+    setShowVideoPlayer,
+    setVideoSrc,
     galleryData
   } = props;
 
@@ -204,7 +212,9 @@ const VideosGalleryBody = props => {
         {videosByColumn.map((videoColumn, i) => (
           <div className="data-grid" key={i}>
             {videoColumn.map((video, j) => (
-              <div className="data-container" key={j}>
+              <div className="data-container" key={j} onClick={
+                () => { setShowVideoPlayer(true); setVideoSrc(`${galleryData.paths.videos}${video}`); }
+              }>
                 <div className="video-thumbnail"
                   style={{
                     display: isVideoLoaded ? "block" : "none"
@@ -217,6 +227,7 @@ const VideosGalleryBody = props => {
                     videoUrl={`${galleryData.paths.videos}${video}`}
                     thumbnailHandler={ () => setIsVideoLoaded(true) }
                   />
+                  {/* <ReactPlayer src={`${galleryData.paths.videos}${video}`} /> */}
                 </div>
               </div>
             ))}
