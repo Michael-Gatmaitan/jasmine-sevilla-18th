@@ -2,7 +2,6 @@ import { data } from '../imageData.js';
 import { motion } from 'framer-motion';
 import { pageAnimationVariant } from '../pageAnimationVariant';
 import { Link } from 'react-router-dom';
-
 import PageBody from './reusable/PageBody';
 // import FolderGallery from './modals/FolderGallery';
 
@@ -100,7 +99,7 @@ const FolderSection = props => {
 
       <div className="folder-block">
         {folderData.map((folder, i) => (
-          <Link to={`/gallery/${folder.folderTitle}`}>
+          <Link to={`/gallery/${folder.folderTitle}`} key={i}>
           <FolderContainer
             folder={folder}
             setGalleryData={setGalleryData}

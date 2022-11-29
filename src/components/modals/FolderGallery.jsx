@@ -3,7 +3,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import VideoPlayer from '../modals/VideoPlayer';
-// import ReactPlayer from 'react-player';
 
 import './FolderGallery.css';
 
@@ -14,31 +13,27 @@ const { PUBLIC_URL } = process.env;
 
 const FolderGallery = props => {
   // const { galleryId } = useParams();
-
-  const {
-    galleryData
-  } = props;
-  
-  const {
-    pictures,
-    videos
-  } = galleryData.files;
+  const { galleryData } = props;
+  const { pictures, videos } = galleryData.files;
 
   const [imagesByColumn, setImagesByColumn] = useState([]);
   const [videosByColumn, setVideosByColumn] = useState([]);
 
   const [activeSubFolder, setActiveSubFolder] = useState('Pictures');
 
-  useEffect(() => {
+  // const picturesIsNotEmpty = pictures.length !== 0;
+  // const videosIsNotEmpty = videos.length !== 0;
+  const [picturesIsNotEmpty, setPicturesIsNotEmpty] = useState(false);
+  const [videosIsNotEmpty, setVideosIsNotEmpty] = useState(false);
 
+  useEffect(() => {
+    const cols = 3;
     if (pictures) {
-      const cols = 3;
       let imagesByColumn = [...Array(cols).keys()].map(c => pictures.filter((_, i) => i % cols === c));
       setImagesByColumn(imagesByColumn);
     }
 
     if (videos) {
-      const cols = 3;
       let videosByColumn = [...Array(cols).keys()].map(c => videos.filter((_, i) => i % cols === c));
       setVideosByColumn(videosByColumn);
     }
@@ -48,10 +43,10 @@ const FolderGallery = props => {
     (pictures.length <= 0 && videos.length >= 1) ? 'Videos' :
     'Pictures'
     );
+    setPicturesIsNotEmpty(pictures.length !== 0);
+    setVideosIsNotEmpty(videos.length !== 0);
   }, [galleryData, pictures, videos]);
 
-  const picturesIsNotEmpty = pictures.length !== 0;
-  const videosIsNotEmpty = videos.length !== 0;
 
   const [isVideoLoaded, setIsVideoLoaded] = useState(true);
   const variant = {
@@ -101,7 +96,7 @@ const FolderGallery = props => {
           <div className="close" onClick={ () => {
             // Set BACK FUNCTION
             navigate('/gallery', { replace: true });
-            setIsVideoLoaded(false);
+            // setIsVideoLoaded(false);
           }}>
             <img src={`${PUBLIC_URL}/svg/icons/close_black.svg`} alt="close" />
           </div>
@@ -171,10 +166,15 @@ const PicturesGalleryBody = props => {
     galleryData
   } = props;
 
+  const styles = {
+    header: { display: activeSubFolder === "Pictures" ? "block" : "none" },
+    dataGrid: { display: activeSubFolder === "Pictures" ? "grid" : "none" }
+  };
+
   return (
     <>
-      <div className="h-2" style={{ display: activeSubFolder === "Pictures" ? "block" : "none" }}>Pictures</div>
-      <div className="data-grids" style={{ display: activeSubFolder === "Pictures" ? "grid" : "none" }}>
+      <div className="h-2" style={styles.header}>Pictures</div>
+      <div className="data-grids" style={styles.dataGrid}>
         {imagesByColumn.map((imageColumn, i) => (
           <div className="data-grid" key={i}>
             {imageColumn.map((image, j) =>(
@@ -193,6 +193,7 @@ const PicturesGalleryBody = props => {
   )
 }
 
+// Video Gallery Body
 const VideosGalleryBody = props => {
 
   const {
@@ -205,16 +206,25 @@ const VideosGalleryBody = props => {
     galleryData
   } = props;
 
+  const styles = {
+    header: { display: activeSubFolder === "Videos" ? "block" : "none" },
+    dataGrid: { display: activeSubFolder === "Videos" ? "grid" : "none" }
+  };
+
   return (
     <>
-      <div className="h-2" style={{ display: activeSubFolder === "Videos" ? "block" : "none" }}>Videos</div>
-      <div className="data-grids" style={{ display: activeSubFolder === "Videos" ? "grid" : "none" }}>
+      <div className="h-2" style={styles.header}>Videos</div>
+      <div className="data-grids" style={styles.dataGrid}>
         {videosByColumn.map((videoColumn, i) => (
           <div className="data-grid" key={i}>
             {videoColumn.map((video, j) => (
-              <div className="data-container" key={j} onClick={
-                () => { setShowVideoPlayer(true); setVideoSrc(`${galleryData.paths.videos}${video}`); }
-              }>
+              <div className="data-container"
+                key={j}
+                onClick={() => {
+                  setShowVideoPlayer(true);
+                  setVideoSrc(`${galleryData.paths.videos}${video}`);
+                }}
+              >
                 <div className="video-thumbnail"
                   style={{
                     display: isVideoLoaded ? "block" : "none"
@@ -227,7 +237,6 @@ const VideosGalleryBody = props => {
                     videoUrl={`${galleryData.paths.videos}${video}`}
                     thumbnailHandler={ () => setIsVideoLoaded(true) }
                   />
-                  {/* <ReactPlayer src={`${galleryData.paths.videos}${video}`} /> */}
                 </div>
               </div>
             ))}

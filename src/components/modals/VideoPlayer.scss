@@ -1,13 +1,13 @@
 @import '../../mixins.scss';
 
 .video-player {
-  width: 100%;
+  width: calc(100% + (14px * 2));
   height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: sticky;
+  // top: 0;
+  // left: 0;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
 
   .close-video-player {
     width: 30px;
@@ -26,6 +26,15 @@
 
     .video-element {
       width: 100% !important;
+    }
+
+    .download-video {
+      background-color: $d_blue;
+      @include fontProp('Montserrat', 500, 16px, #fff);
+      width: 100%;
+      padding: 12px 0;
+      border-radius: 4px;
+      margin-top: 12px;
     }
   }
 
