@@ -1,11 +1,12 @@
 @import '../../mixins.scss';
 
 .video-player {
-  width: calc(100% + (14px * 2));
+  // width: calc(100% + (14px * 2));
+  width: 100%;
   height: 100%;
-  position: sticky;
-  // top: 0;
-  // left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.9);
 
@@ -36,6 +37,41 @@
       border-radius: 4px;
       margin-top: 12px;
     }
+  }
+
+  .video-downloaded {
+    width: calc(100% - 14px * 2);
+    padding: 6px 12px;
+    border-radius: 4px;
+    @include fontProp('Source Sans Pro', 600, 16px, #121212);
+    background-color: $green;
+    text-align: center;
+    position: absolute;
+    // bottom: 60px;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+
+  @keyframes videoDownloadedAnimation {
+    0% {
+      opacity: 0;
+      botton: 50px;
+    } 25% {
+      opacity: 1;
+      bottom: 60px;
+    } 75% {
+      opacity: 1;
+      bottom: 60px;
+    } 100% {
+      opacity: 0;
+      bottom: 50px;
+    }
+  }
+
+  .video-downloaded-action {
+    animation: 1s videoDownloadedAnimation ease-in;
   }
 
   // .bark-bg {

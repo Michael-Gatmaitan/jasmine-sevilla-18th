@@ -9,6 +9,9 @@ import './FolderGallery.css';
 // npm module for generating video thumbnail
 import VideoThumbnail from 'react-video-thumbnail';
 
+//image placeholder image
+import PlaceHolderImage from '../../img/image-placeholder.png';
+
 const { PUBLIC_URL } = process.env;
 
 const FolderGallery = props => {
@@ -52,7 +55,7 @@ const FolderGallery = props => {
   const variant = {
     initial: {
       opacity: 0,
-      y: '-10vh',
+      // y: '-10vh',
       ponterEvents: "none",
     },
 
@@ -64,7 +67,7 @@ const FolderGallery = props => {
     },
 
     exit: {
-      y: '-10vh',
+      // y: '-10vh',
       opacity: 0,
       pointerEvents: "none",
       transition: { duration: .2 }
@@ -85,13 +88,6 @@ const FolderGallery = props => {
         animate="animate"
         exit="exit"
       >
-        <VideoPlayer
-          showVideoPlayer={showVideoPlayer}
-          setShowVideoPlayer={setShowVideoPlayer}
-          videoSrc={videoSrc}
-          setVideoSrc={setVideoSrc}
-        />
-
         <div className="folder-gallery-nav">
           <div className="close" onClick={ () => {
             // Set BACK FUNCTION
@@ -154,6 +150,13 @@ const FolderGallery = props => {
           </div>
         )}
 
+        <VideoPlayer
+          showVideoPlayer={showVideoPlayer}
+          setShowVideoPlayer={setShowVideoPlayer}
+          videoSrc={videoSrc}
+          setVideoSrc={setVideoSrc}
+        />
+
       </motion.div>
     </AnimatePresence>
   )
@@ -181,8 +184,10 @@ const PicturesGalleryBody = props => {
               <div className="data-container" key={j}>
                 <LazyLoadImage
                   src={`${galleryData.paths.pictures}${image}`}
-                  className="gallery-images"
+                  className="gallery-image"
                   alt={image}
+                  placeholderSrc={PlaceHolderImage}
+                  effect="blur"
                 />
               </div>
             ))}

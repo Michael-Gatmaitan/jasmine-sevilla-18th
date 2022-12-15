@@ -101,7 +101,11 @@
             overflow: hidden;
             
             // For pictures
-            .gallery-images {
+            span {
+              border-radius: 8px;
+              overflow: hidden;
+            }
+            .gallery-image {
               width: 100%;
               min-height: 120px;
               max-height: 240px;
