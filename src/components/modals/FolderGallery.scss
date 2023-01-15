@@ -12,6 +12,43 @@
   overflow-y: scroll;
   overflow-x: hidden;
 
+  // Guide
+  .guide-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: rgba(#000, 0.9);
+
+    .guide {
+      width: 80%;
+      position: absolute;
+      width: calc(100% - (14px * 2));
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 8px;
+      background-color: $body_bg;
+      box-shadow: 0 4px 8px rgba(#000, 0.27);
+      border-radius: 8px;
+
+      .text-guide {
+        @include fontProp('Monserrat', 400, 16px, #121212);
+      }
+
+      .close-guide {
+        width: 100%;
+        padding: 16px 0;
+        background-color: $d_blue;
+        @include fontProp('Montserrat', 500, 14px, #fff);
+        border-radius: 8px;
+        margin-top: 12px;
+      }
+    }
+  }
+
   &::-webkit-scrollbar {
     display: none;
   }

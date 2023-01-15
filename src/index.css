@@ -34,8 +34,7 @@ body {
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   outline: none;
 }
 
@@ -53,5 +52,4 @@ img {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

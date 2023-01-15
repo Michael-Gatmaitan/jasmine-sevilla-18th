@@ -3,8 +3,6 @@ import PageBody from './reusable/PageBody';
 import Message18th from './modals/Message18th';
 
 import './scss/Eighteenth.css';
-import { motion } from 'framer-motion';
-import { pageAnimationVariant } from '../pageAnimationVariant.js';
 
 const Eighteenth = () => {
 
@@ -28,12 +26,7 @@ const Eighteenth = () => {
         messageData={messageData}
       />
 
-      <motion.div className="eighteenth container"
-        variants={pageAnimationVariant}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-      >
+      <div className="eighteenth container">
         <PageBody header="18th" photoSrc="./svg/display_images/honeybunch_disp2.svg"/>
 
         <div className="message-card-container">
@@ -48,7 +41,7 @@ const Eighteenth = () => {
             />
           )}
         </div>
-      </motion.div>
+      </div>
     </React.Fragment>
   )
 }

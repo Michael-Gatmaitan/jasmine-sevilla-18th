@@ -39,27 +39,56 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
+.folder-gallery .guide-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.folder-gallery .guide-container .guide {
+  width: 80%;
+  position: absolute;
+  width: calc(100% - 28px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px;
+  background-color: #F8FFFE;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.27);
+  border-radius: 8px;
+}
+.folder-gallery .guide-container .guide .text-guide {
+  font-family: "Monserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #121212;
+}
+.folder-gallery .guide-container .guide .close-guide {
+  width: 100%;
+  padding: 16px 0;
+  background-color: #1D2FD3;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 8px;
+  margin-top: 12px;
+}
 .folder-gallery::-webkit-scrollbar {
   display: none;
 }
-
 .folder-gallery img {
   display: block;
 }
-
 .folder-gallery .folder-gallery-nav {
   width: 100%;
   padding: 15px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -67,54 +96,37 @@
   background-color: #F8FFFE;
   z-index: 10;
 }
-
 .folder-gallery .folder-gallery-nav .close {
   width: 30px;
   height: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   place-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .folder-gallery .folder-gallery-nav .logo {
   position: absolute;
   left: 50%;
   height: 30px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
-
 .folder-gallery .folder-gallery-nav .download-folder {
   width: 30px;
   height: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   place-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .folder-gallery .gallery-container .folder-label {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   font-size: 12px;
   color: rgba(18, 18, 18, 0.6);
 }
-
 .folder-gallery .gallery-container .h-1 {
   width: 80%;
 }
-
 .folder-gallery .gallery-container .selection {
   padding: 12px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 12px;
   position: -webkit-sticky;
@@ -123,7 +135,6 @@
   background-color: #F8FFFE;
   z-index: 10;
 }
-
 .folder-gallery .gallery-container .selection .selection-button {
   padding: 8px 12px;
   font-family: "Montserrat", sans-serif;
@@ -133,43 +144,33 @@
   background-color: #93EFB8;
   border-radius: 4px;
 }
-
 .folder-gallery .gallery-container .selection .active-selection {
   color: #fff;
   background-color: #1D2FD3;
 }
-
 .folder-gallery .gallery-container .gallery-data {
   width: 100%;
 }
-
 .folder-gallery .gallery-container .gallery-data .h-2 {
   margin-top: 10px;
 }
-
 .folder-gallery .gallery-container .gallery-data .data-grids {
   width: 100%;
-  display: -ms-grid;
   display: grid;
   gap: 10px;
-  -ms-grid-columns: (auto)[3];
-      grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, auto);
 }
-
 .folder-gallery .gallery-container .gallery-data .data-grids .data-grid {
   overflow: hidden;
 }
-
 .folder-gallery .gallery-container .gallery-data .data-grids .data-grid .data-container {
   padding-top: 10px;
   overflow: hidden;
 }
-
 .folder-gallery .gallery-container .gallery-data .data-grids .data-grid .data-container span {
   border-radius: 8px;
   overflow: hidden;
 }
-
 .folder-gallery .gallery-container .gallery-data .data-grids .data-grid .data-container .gallery-image {
   width: 100%;
   min-height: 120px;
@@ -178,7 +179,6 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .folder-gallery .gallery-container .gallery-data .data-grids .data-grid .data-container .video-thumbnail {
   width: 100%;
   position: relative;
@@ -186,18 +186,15 @@
   overflow: hidden;
   border-radius: 8px;
 }
-
 .folder-gallery .gallery-container .gallery-data .data-grids .data-grid .data-container .video-thumbnail .react-thumbnail-generator {
   width: 100%;
 }
-
 .folder-gallery .gallery-container .gallery-data .data-grids .data-grid .data-container .video-thumbnail .react-thumbnail-generator img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   min-height: 120px;
 }
-
 .folder-gallery .gallery-container .gallery-data .data-grids .data-grid .data-container .video-thumbnail .thumbnail-darker {
   width: 100%;
   height: 100%;
@@ -207,14 +204,11 @@
   background-color: rgba(0, 0, 0, 0.5);
   pointer-events: none;
 }
-
 .folder-gallery .gallery-container .gallery-data .data-grids .data-grid .data-container .video-thumbnail .play {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 32px;
   height: 32px;
-}
-/*# sourceMappingURL=FolderGallery.css.map */
+}/*# sourceMappingURL=FolderGallery.css.map */

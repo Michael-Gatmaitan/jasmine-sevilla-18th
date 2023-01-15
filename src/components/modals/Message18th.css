@@ -39,18 +39,14 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
 .message-18th .message-container {
   margin-top: 48px;
 }
-
 .message-18th .message-container .message-header {
   color: #fff;
 }
-
 .message-18th .message-container .message-body {
   width: 90%;
   color: rgba(255, 255, 255, 0.8);
   margin-top: 12px;
-}
-/*# sourceMappingURL=Message18th.css.map */
+}/*# sourceMappingURL=Message18th.css.map */

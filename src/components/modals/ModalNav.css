@@ -30,12 +30,8 @@
 .modal-nav {
   width: 100%;
   padding: 15px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-bottom: 48px;
   position: -webkit-sticky;
   position: sticky;
@@ -43,33 +39,23 @@
   background-color: #121212;
   z-index: 50;
 }
-
 .modal-nav img {
   display: block;
 }
-
 .modal-nav .back {
   height: 30px;
   width: 35px;
   padding: 0 14px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   place-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .modal-nav .logo {
   height: 30px;
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
-
 .modal-nav .download-folder {
   display: none;
-}
-/*# sourceMappingURL=ModalNav.css.map */
+}/*# sourceMappingURL=ModalNav.css.map */

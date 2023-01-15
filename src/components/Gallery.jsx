@@ -1,6 +1,4 @@
 import { data } from '../imageData.js';
-import { motion } from 'framer-motion';
-import { pageAnimationVariant } from '../pageAnimationVariant';
 import { Link } from 'react-router-dom';
 import PageBody from './reusable/PageBody';
 // import FolderGallery from './modals/FolderGallery';
@@ -50,12 +48,7 @@ const Gallery = props => {
         galleryData={galleryData}
       /> */}
 
-      <motion.div className="gallery container"
-        variants={pageAnimationVariant}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-      >
+      <div className="gallery container">
         <PageBody header="Gallery" photoSrc="./svg/display_images/honeybunch_disp4.svg"/>
 
 
@@ -75,7 +68,7 @@ const Gallery = props => {
 
 Thank you for everything you’ve done with me and for staying with me kahit na minsan di tayo nagkakaintindihan. Di a dito natatapos ang lahat hon! Madami pa tayong dadaanan at pagdadaanan na magiging memories natin na titignan natin as a lesson soon! I love you.</div>
         </div>
-      </motion.div>
+      </div>
     </>
   )
 }

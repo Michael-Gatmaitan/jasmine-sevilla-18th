@@ -27,35 +27,40 @@
   color: rgba(3, 2, 2, 0.8);
 }
 
-.main-nav {
-  width: calc(100% + 28px);
-  margin-left: -14px;
-  padding: 15px 0;
-  display: flex;
-  align-items: center;
-  margin-bottom: 48px;
-  position: -webkit-sticky;
-  position: sticky;
+.image-viewer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
   top: 0;
-  background-color: #F8FFFE;
-  z-index: 50;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 14px 14px 28px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.main-nav img {
-  display: block;
-}
-.main-nav .burger-menu {
+.image-viewer .close-image-viewer {
+  width: 30px;
   height: 30px;
-  padding: 14px;
+  background-color: #fff;
   display: flex;
   place-items: center;
   justify-content: center;
 }
-.main-nav .logo {
-  height: 30px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.image-viewer img {
+  width: 100%;
+  max-height: 70%;
+  margin: 0 auto;
+  border-radius: 4px;
 }
-.main-nav .buttons {
-  display: none;
-}/*# sourceMappingURL=Nav.css.map */
+.image-viewer .download-image {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  background-color: #1D2FD3;
+  padding: 16px 0;
+  border-radius: 8px;
+}/*# sourceMappingURL=ImageViewer.css.map */

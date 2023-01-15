@@ -37,127 +37,87 @@
   top: 0;
   z-index: 100;
 }
-
 .sidebar img {
   display: block;
 }
-
 .sidebar .sidebar-nav {
   width: 100%;
   padding: 15px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-bottom: 48px;
 }
-
 .sidebar .sidebar-nav .close {
   width: 30px;
   height: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   place-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .sidebar .sidebar-nav .logo {
   position: absolute;
   left: 50%;
   height: 30px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
-
 .sidebar .sidebar-buttons {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
+  grid-template-columns: auto;
   grid-gap: 12px;
   margin-bottom: 32px;
 }
-
 .sidebar .sidebar-buttons .sidebar-button {
   padding: 6px 0;
   border-radius: 4px;
   background-color: #F8FFFE;
 }
-
 .sidebar .sidebar-buttons .sidebar-button:hover {
   color: #93EFB8;
 }
-
 .sidebar .sidebar-buttons .active-button {
   color: #1D2FD3;
 }
-
 .sidebar .profile-container {
   padding: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   background-color: #5666F5;
   border-radius: 12px;
 }
-
 .sidebar .profile-container .profile-border {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   place-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 120px;
   height: 120px;
   background-color: #fff;
   border-radius: 50%;
 }
-
 .sidebar .profile-container .profile-border .profile {
   width: 110px;
   height: 110px;
   overflow: hidden;
   border-radius: 50%;
 }
-
 .sidebar .profile-container .profile-border .profile img {
   width: 110px;
   height: 110px;
 }
-
 .sidebar .profile-container .profile-info {
   margin-top: 12px;
   text-align: center;
 }
-
 .sidebar .profile-container .profile-info .profile-label {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 14px;
   color: #fff;
 }
-
 .sidebar .profile-container .profile-info .profile-name {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 24px;
   color: #fff;
-}
-/*# sourceMappingURL=SideBar.css.map */
+}/*# sourceMappingURL=SideBar.css.map */

@@ -8,7 +8,6 @@ const { PUBLIC_URL } = process.env;
 const VideoPlayer = props => {
 
   const {
-    showVideoPlayer,
     setShowVideoPlayer,
     videoSrc,
     setVideoSrc
@@ -27,17 +26,12 @@ const VideoPlayer = props => {
   }
 
   return (
-    <div className="video-player"
-      style={{
-        display: showVideoPlayer ? "flex" : "none"
-      }}
-    >
+    <div className="video-player">
       <div
-        onClick={ () => {
+        onClick={() => {
           setShowVideoPlayer(false);
           setVideoSrc(".");
-          console.log("close video player");
-        } }
+        }}
         className="close-video-player"
       >
         <img src={`${PUBLIC_URL}/svg/icons/close_black.svg`} alt="close" />

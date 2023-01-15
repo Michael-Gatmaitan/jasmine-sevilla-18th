@@ -2,8 +2,6 @@ import React from 'react';
 import PageBody from './reusable/PageBody';
 import './scss/Home.css';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { pageAnimationVariant } from '../pageAnimationVariant.js';
 
 const Home = () => {
   
@@ -25,12 +23,7 @@ const Home = () => {
   ];
 
   return (
-    <motion.div className="home container"
-      variants={pageAnimationVariant}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-    >
+    <div className="home container">
 
       <PageBody
         header="Jasmine Braga Sevilla @18"
@@ -62,10 +55,9 @@ const Home = () => {
       <div className="card-of-pages">
         <PageCard data={pageCardData[0]} />
         <PageCard data={pageCardData[1]} />
-
       </div>
 
-    </motion.div>
+    </div>
   );
 }
 
